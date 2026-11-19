@@ -51,8 +51,9 @@ export function stageShot(G, name) {
     }
     return SCREEN_PLAY;
   }
-  // Cover: the title screen over a slow pan of Neon Palms at golden hour.
-  G.elapsed = 34;
+  // Cover: the title screen over the diner blocks at full midday (elapsed is
+  // a whole number of day cycles, so the night darkness is exactly zero).
+  G.elapsed = 520;
   stepScene(G, 3, null);
   return SCREEN_TITLE;
 }

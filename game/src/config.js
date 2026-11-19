@@ -23,12 +23,12 @@ export const ROADS = {
 
 /** Six districts, each a rectangle with its own building palette and name. */
 export const DISTRICTS = [
-  { name: 'Coral Strand', x: 0, y: 2300, w: 1500, h: 900, roof: '#e2725b', wall: '#f4a261' },
-  { name: 'Neon Palms', x: 1500, y: 2300, w: 1700, h: 900, roof: '#9b5de5', wall: '#f15bb5' },
-  { name: 'Harbor Row', x: 3200, y: 2300, w: 1600, h: 900, roof: '#4361ee', wall: '#4cc9f0' },
-  { name: 'Mesa Heights', x: 0, y: 0, w: 1600, h: 1300, roof: '#bc6c25', wall: '#dda15e' },
-  { name: 'Saltflats Market', x: 1600, y: 0, w: 1600, h: 1300, roof: '#606c38', wall: '#a7c957' },
-  { name: 'Old Fort', x: 3200, y: 0, w: 1600, h: 1300, roof: '#6d6875', wall: '#b5838d' },
+  { name: 'Coral Strand', x: 0, y: 1800, w: 1500, h: 1400, roof: '#e2725b', wall: '#f4a261' },
+  { name: 'Neon Palms', x: 1500, y: 1800, w: 1700, h: 1400, roof: '#9b5de5', wall: '#f15bb5' },
+  { name: 'Harbor Row', x: 3200, y: 1800, w: 1600, h: 1400, roof: '#4361ee', wall: '#4cc9f0' },
+  { name: 'Mesa Heights', x: 0, y: 0, w: 1600, h: 1800, roof: '#bc6c25', wall: '#dda15e' },
+  { name: 'Saltflats Market', x: 1600, y: 0, w: 1600, h: 1800, roof: '#606c38', wall: '#a7c957' },
+  { name: 'Old Fort', x: 3200, y: 0, w: 1600, h: 1800, roof: '#6d6875', wall: '#b5838d' },
 ];
 
 /** Named landmarks drawn as special props; two of them anchor respawns. */

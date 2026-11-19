@@ -154,7 +154,7 @@ export function createRenderer(canvas) {
     ctx.fillText(lm.name, x, y + 66);
   }
 
-  function drawCar(car, cam) {
+  function drawCar(car, cam, elapsed) {
     const x = car.x - cam.x;
     const y = car.y - cam.y;
     if (x < -80 || y < -80 || x > VIEW.width + 80 || y > VIEW.height + 80) return;
@@ -176,20 +176,20 @@ export function createRenderer(canvas) {
     if (car.police) {
       ctx.fillStyle = '#4361ee';
       ctx.fillRect(-8, -t.h / 2, 16, t.h);
-      ctx.fillStyle = Math.floor(G.elapsed * 4) % 2 ? '#e63946' : '#4cc9f0';
+      ctx.fillStyle = Math.floor(elapsed * 4) % 2 ? '#e63946' : '#4cc9f0';
       ctx.fillRect(-5, -4, 10, 8);
     }
     if (car.health < car.type.health * 0.4) {
       ctx.fillStyle = 'rgba(80,80,80,0.55)';
-      ctx.beginPath(); ctx.arc(t.w * 0.28, 0, 9 + Math.sin(G.elapsed * 9) * 2, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(t.w * 0.28, 0, 9 + Math.sin(elapsed * 9) * 2, 0, Math.PI * 2); ctx.fill();
     }
     ctx.restore();
   }
 
   function drawActors(G, cam) {
-    for (const car of G.traffic) drawCar(car, cam);
-    for (const unit of G.police) drawCar(unit, cam);
-    if (G.player.car) drawCar(G.player.car, cam);
+    for (const car of G.traffic) drawCar(car, cam, G.elapsed);
+    for (const unit of G.police) drawCar(unit, cam, G.elapsed);
+    if (G.player.car) drawCar(G.player.car, cam, G.elapsed);
     for (const ped of G.peds) {
       const x = ped.x - cam.x;
       const y = ped.y - cam.y;
@@ -255,7 +255,7 @@ export function createRenderer(canvas) {
   }
 
   function panel(title, lines, prompt) {
-    ctx.fillStyle = 'rgba(8,10,16,0.78)';
+    ctx.fillStyle = 'rgba(8,10,16,0.6)';
     ctx.fillRect(0, 0, VIEW.width, VIEW.height);
     ctx.textAlign = 'center';
     ctx.fillStyle = '#ffd166';
